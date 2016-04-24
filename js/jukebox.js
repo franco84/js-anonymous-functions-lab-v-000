@@ -15,30 +15,39 @@ function randomNumber() {
 }
 
 function menu() {
-  $('#menu').on('click', function(e) {
+  $('#menu').on('click', funcOne)
+  }
+
+  function funcOne(e) {
     $('#menuOptions').html("You can play a song, pause a song, or view all the songs");
-  });
-}
+  }
+
 
 function play() {
-  $('#play').on('click', function(e) {
-    $('#songPlaying').html("now playing " + songToPlay + " by " + theArtist);
+  $('#play').on('click', funcTwo);
+  }
+   
+function funcTwo(e) {
+  $('#songPlaying').html("now playing " + songToPlay + " by " + theArtist);
     return "now playing " + songToPlay + " by " + theArtist;
-  });
-}
+  }
 
 function pause() {
-  $('#pause').on('click', function(e) {
+  $('#pause').on('click', funcThree);
+  }
+
+function funcThree(e) {
     $('#songPaused').html(songToPlay + " is paused");
-  });
-}
+  }
 
 function show() {
-  $('#show').on('click', function(e) {
-    var songs = "";
+  $('#show').on('click', funcFour); 
+  }
+   
+function funcFour(e) {
+ var songs = "";
     for (var key in jukeboxSongs) {
       songs += jukeboxSongs[key] + " by " + key +  " is available to play. "
     }
     $('#showSongs').html(songs);
-  });
 }
